@@ -1,10 +1,22 @@
 #!/bin/bash
 
-echo "file to encrypt/decrypt"
-echo "..choices.."
+
+if [ $1 = *.gpg ]
+then
+        echo "decrypting"
+        gpg -d $1
+        echo "${1} was decrypted"
+
+elif [ $0 != *.gpg ]
+then
+        echo "encrypting"
+        gpg -c $1
+        echo "${1} was encrypted"
+else
+        echo "..here are your options.."
+fi
 
 choice="Encrypt Decrypt"
-
 select option in $choice; do
 if [ $REPLY = 1 ]
 then
@@ -13,21 +25,17 @@ then
         read file;
         gpg -c $file
         echo "file encrypted"
-
-elif [ $REPLY = 2 ]
+        elif [ $REPLY = 2 ]
 then
         echo "you selected decryption"
         echo "enter the file name"
         read file2;
         gpg -d $file2
         echo "file decrypted"
-
-elif [ $REPLY = secret ]
+        elif [ $REPLY = secret ]
 then
         echo "..you're curious lol.."
-
-else
-
+        else
         echo "da fuq -.- pick something"
         echo "..or ctl+c to exit."
 fi
