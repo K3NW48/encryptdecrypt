@@ -1,20 +1,23 @@
-# encrypt and decrypt a file with pgp
-
-Select a file to encrypt/decrypt through gpg.
+# quick encrypt/decrypt with pgp
     
-+++++++++++++++++++++++++++++++++++++++++++++
+---------------------------------------------------------------------------------------
 
-Install gpg on Linux or Termux.
+Install gpg on Linux or Termux:
 
 apt-get install -y gpg
-  or
-pkg istall -y gnupg
 
-+++++++++++++++++++++++++++++++++++++++++++++
+or
 
-Uses single prefix to quick encrypt/decrypt file after recognizing if file is .gpg or not.
+pkg install -y gnupg
+
+---------------------------------------------------------------------------------------
+
+Uses single prefix to quick encrypt/decrypt file after recognizing if .gpg or not.
 
 EXAMPLE: 
-  bash EandD file.txt
-    or
-  bash EandD file.txt.gpg
+  
+bash EandD file.txt
+    
+or
+	
+bash EandD file.txt.gpg
